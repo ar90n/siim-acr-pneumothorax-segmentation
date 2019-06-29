@@ -6,6 +6,10 @@ verify_ssl = true
 [dev-packages]
 black = "*"
 isort = "*"
+jupyter = "*"
+jupytext = "*"
+ipython = "*"
+matplotlib = "*"
 
 [packages]
 pydicom = "*"
