@@ -109,3 +109,6 @@ venv.bak/
 
 # macos
 __MACOSX
+
+# input dir
+.input
