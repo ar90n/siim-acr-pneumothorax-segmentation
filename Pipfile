@@ -15,8 +15,11 @@ pycocotools = "*"
 
 [packages]
 pydicom = "*"
-pil = "*"
 pillow = "*"
+torch = "*"
+torchvision = "*"
+opencv-python-headless = "*"
+mock = "*"
 
 [requires]
 python_version = "3.6"
