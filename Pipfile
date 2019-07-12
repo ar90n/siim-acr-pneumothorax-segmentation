@@ -11,7 +11,6 @@ jupytext = "*"
 ipython = "*"
 matplotlib = "*"
 cython = "*"
-pycocotools = "*"
 
 [packages]
 pydicom = "*"
@@ -20,6 +19,8 @@ torch = "*"
 torchvision = "*"
 opencv-python-headless = "*"
 mock = "*"
+pycocotools = "*"
+yolact = {editable = true,git = "https://github.com/ar90n/yolact.git"}
 
 [requires]
 python_version = "3.6"
