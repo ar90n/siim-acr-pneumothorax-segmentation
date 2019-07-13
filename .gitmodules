@@ -1,3 +1,0 @@
-[submodule "src/vendor/yolact"]
-	path = src/vendor/submodules/yolact
-	url = git@github.com:dbolya/yolact.git
