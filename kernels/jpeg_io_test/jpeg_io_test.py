@@ -8,12 +8,13 @@
 #       format_version: '1.2'
 #       jupytext_version: 1.1.7
 #   kernelspec:
-#     display_name: Default
+#     display_name: Python 3
 #     language: python
 #     name: python3
 # ---
 
 # %%
+import os
 import json
 import pydicom
 import piexif
@@ -25,7 +26,7 @@ import numpy as np
 # %matplotlib inline
 
 # %%
-data_root = Path('..') / "data" / "jpeg-images-train"
+data_root = Path(os.environ.get('INPUT_PATH', '.')) / "siim-acr-pneumothorax-segmentation" / "jpeg-images-train"
 
 
 # %%
@@ -71,4 +72,4 @@ for i, p in enumerate(data_root.glob('*.jpg')):
         axs[j+1].imshow(masks[j])
     if 8 < i:
         break
-    
+
