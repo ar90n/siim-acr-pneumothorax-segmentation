@@ -15,7 +15,7 @@ def rle2mask(array, width, height):
         current_position = 0
         for index, start in enumerate(starts):
             current_position += start
-            mask[current_position:current_position+lengths[index]] = 255
+            mask[current_position : current_position + lengths[index]] = 255
             current_position += lengths[index]
 
     return mask.reshape(height, width).T
@@ -51,17 +51,18 @@ def mask2rle(img, width, height):
 
 def read_jpg(path, empty_mask_is_negative=False):
     img = Image.open(path)
-    makernote_bytes = piexif.load(img.info["exif"])[
-        "Exif"][piexif.ExifIFD.MakerNote]
+    makernote_bytes = piexif.load(img.info["exif"])["Exif"][piexif.ExifIFD.MakerNote]
     attr = json.loads(makernote_bytes.decode("ascii"))
 
     if empty_mask_is_negative:
-        attr['Masks'] = attr.get('Masks', [[-1]])
+        attr["Masks"] = attr.get("Masks", [[-1]])
 
     masks = None
-    if 'Masks' in attr:
-        masks = [rle2mask(encoded_pixels, img.width, img.height)
-                 for encoded_pixels in attr['Masks']]
-        del attr['Masks']
+    if "Masks" in attr:
+        masks = [
+            rle2mask(encoded_pixels, img.width, img.height)
+            for encoded_pixels in attr["Masks"]
+        ]
+        del attr["Masks"]
 
     return np.asarray(img), attr, masks
