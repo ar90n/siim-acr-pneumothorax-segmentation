@@ -26,7 +26,7 @@ import numpy as np
 # %matplotlib inline
 
 # %%
-data_root = Path(os.environ.get('INPUT_PATH', '.')) / "siim-acr-pneumothorax-segmentation" / "jpeg-images-train"
+data_root = Path(os.environ.get('KAGGLE_INPUT_DIR', '.')) / "siim-acr-pneumothorax-segmentation" / "jpeg-images-train"
 
 
 # %%
